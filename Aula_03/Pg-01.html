@@ -11,80 +11,108 @@
             <fieldset>
 
                 <legend>Informações Pessoais</legend>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome">
+                <label for="nome">Nome:
+                    <input type="text" id="nome" name="nome" placeholder="Nome completo" required autofocus>
+                </label>
                 <br><br>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <label for="tel">Telefone:
+                    <input type="tel" id="tel" name="tel" required placeholder="Celular ou fixo">
+                </label>
+                <br><br>
+
+                <label for="email">Email:
+                    <input type="email" id="email" name="email" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                </label>
                 <br><br>
     
-                <label for="dtNasc">Data de Nascimento:</label>
-                <input type="date" id="dtNasc" name="dtNasc">
+                <label for="dtNasc">Data de Nascimento:
+                    <input type="date" id="dtNasc" name="dtNasc" required>
+                </label>
                 <br><br>
 
-                <label for="nome">Endereço:</label>
-                <input type="text" id="end" name="end">
+                <label for="nome">Endereço:
+                    <input type="text" id="end" name="end" required>
+                </label>
+
+                <label for="cep">CEP:
+                    <input name="cep" id="cep" required pattern="\d{5}-?\d{3}">
+                </label>
+
+                <br><br>
+
+                <label for="url">Página pessoal:
+                    <input type="url" id="url" name="url" placeholder="Sua página pessoal">
+                </label>
 
             </fieldset>
 
             <br><br>
 
             <fieldset>
-
                 <legend>Preferências</legend>
                 
-                <label for="nav">Selecione seu navegador preferido:</label>
-                <select id="nav">
-                <option value="firefox">Firefox</option>
-                <option value="chrome">Google Chrome</option>
-                <option value="opera">Opera</option>
-                <option value="IE">I.E</option>
-                </select>
+                <label for="nav">Selecione seu navegador preferido:
+                    <select id="nav">
+                    <option value="firefox">Firefox</option>
+                    <option value="chrome">Google Chrome</option>
+                    <option value="opera">Opera</option>
+                    <option value="IE">I.E</option>
+                    </select>
+                </label>
     
-                <br><br><br><br>
+                <br><br><br><br><br><br>
     
-                <label for="nav">Esporte preferido:</label>
-                <select id="nav">
-                <option value="futebol">Futebol</option>
-                <option value="tenis">Tênis</option>
-                <option value="natacao">Natação</option>
-                <option value="basquete">Basquete</option>
-                </select>
+                <label for="nav">Esporte preferido:
+                    <select id="nav">
+                    <option value="futebol">Futebol</option>
+                    <option value="tenis">Tênis</option>
+                    <option value="natacao">Natação</option>
+                    <option value="basquete">Basquete</option>
+                    </select>
+                </label>
+                <br><br><br><br><br><br>
     
-                <br><br><br><br>
-    
-                <label for="nav">Seu humor hoje:</label>
-                <input list="humor">
-                <datalist id="humor">
-                <option value="Triste">
-                <option value="Alegre">
-                <option value="Ansioso">
-                <option value="Bravo">
-                </datalist>
+                <label for="nav">Seu humor hoje:
+                    <input list="humor">
+                    <datalist id="humor">
+                        <option value="Triste">
+                        <option value="Alegre">
+                        <option value="Ansioso">
+                        <option value="Bravo">
+                    </datalist>
+                </label>
+                <br><br><br><br><br><br><br><br><br><br><br>
 
-                <br><br><br><br>
+                <label for="cor">Cor preferida:
+                    <input type="color" name="cor" id="cor">
+                </label>
     
             </fieldset>
 
                 <br><br>
 
             <fieldset>
+                <legend>Textos livres</legend> 
 
-                <legend>Textos livres</legend>
-                    
-                <label for="sugest">Sugestões:</label>
-                <textarea id="sugest" rows="4" cols="50"></textarea>
+                <label for="sugest">Sugestões:
+                    <textarea id="sugest" rows="4" cols="50"></textarea>
+                </label>
+
+                <br><br>
+
+                <label for="coment">Comentários:
+                    <textarea id="coment" maxlength="280"></textarea>
+                </label> 
 
             </fieldset>
 
                 <br><br>
 
-                <input type="submit">
+            <input type="submit" value="Enviar">
         
-        </form>
-        
+        </form>   
     
 </body>
 </html>
