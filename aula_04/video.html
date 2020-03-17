@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Vídeo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <video id="video1" width="320" height="240">
+        <source src="Horse.mp4" type="video/mp4">
+        <source src="Horse.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+    </video>
+
+    <label for="meterTempo">Tempo da música:</label>
+    <meter id="meterTempo" value="2" min="0" max="10"></meter><br>
+
+    <button onclick="playPause()">Play/Pause</button>
+    <button onclick="tempoMusica()">Tempo</button>
+    <script>
+        
+
+        function playPause() { 
+            var myVideo = document.getElementById("video1"); 
+            if (myVideo.paused) 
+            myVideo.play(); 
+            else 
+            myVideo.pause(); 
+        }  
+
+        function tempoMusica() { 
+            var tempo = document.getElementById("video1");
+            alert(tempo.currentTime);
+        } 
+
+    </script>
+
+</body>
+</html>
