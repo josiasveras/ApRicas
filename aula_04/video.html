@@ -5,10 +5,24 @@
     <title>Vídeo</title>
 
     <style>
+
         button {
-        position: relative;
-        left: 30px;
-}
+        position: absolute;
+        top: 260px;
+        left: 7px;
+        }
+
+        meter {
+            position: absolute;
+            top: 265px;
+            left: 250px;
+        }
+
+        label {
+            position: absolute;
+            top: 265px;
+            left: 130px;
+        }
 
     </style>
 
@@ -16,28 +30,35 @@
 <body>
 
     <video id="video1" width="320" height="240">
-        <source src="Horse.mp4" type="video/mp4">
-        <source src="Horse.ogg" type="video/ogg">
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
       Your browser does not support the video tag.
     </video>
 
-    <button onclick="playPause()">Play/Pause</button>
+    <button id="btnPlayPause" onclick="playPause()">Play</button>
 
-    <label for="meterTempo">Tempo do vídeo:</label>
-    <meter id="meterTempo" value="0" min="0" max="28"></meter>
+    <label for="meterTempo">Duração do vídeo:</label>
+    <meter id="meterTempo" value="0" min="0" max="12"></meter>
 
-      <script>
+    <script>
         
         // Pega o elemento video com id="video1"
         var myVideo = document.getElementById("video1");
 
         // Função para iniciar e parar a execução do video
-        function playPause() { 
-            if (myVideo.paused) 
-            myVideo.play(); 
-            else 
-            myVideo.pause(); 
-        } 
+        function playPause() {
+
+            if (myVideo.paused){
+                myVideo.play();
+                document.getElementById("btnPlayPause").innerHTML = "Pause";
+
+            }else{ 
+                myVideo.pause(); 
+                document.getElementById("btnPlayPause").innerHTML = "Play";
+
+            }
+
+        }
 
         // Cria um evento "ontimeupdate" para o elemento video, e executa a função "tempoMusica" se o tempo do video mudar
         myVideo.ontimeupdate = function() {tempoMusica()};
