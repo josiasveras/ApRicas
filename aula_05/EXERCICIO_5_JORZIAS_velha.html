@@ -1,0 +1,60 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Drag and Drop</title>
+
+<style>
+*{margin: 0;padding: 0;}
+#board{border:5px solid #333; }
+#board td{background-color:#fff;background-image: linear-gradient(top, #fff, #eee);box-shadow:inset 0 0 0 1px #fff;height:150px;text-align:center;vertical-align:middle;width:150px;}
+#board td img{width: 20px;height: auto;}
+#board tr:nth-child(odd) td:nth-child(even), #board tr:nth-child(even) td:nth-child(odd) {background-color:#ddd;background-image: linear-gradient(top, #ddd, #eee);box-shadow:inset 0 0 10px rgba(0,0,0,.4);}
+.center{display: flex;justify-content: center;align-items: center;min-height: 100vh;}
+.velha{display: flex;}
+.controle{padding-left: 20px;}
+.controle img{display: block;width: 30px;height: auto;margin: 10px auto;}
+</style>
+<div class="center">
+  <div class="velha">
+    <table id="board" cellpadding="0" cellspacing="0">
+      <tr>
+        <td ondragover="arrastando(event)" ondrop="fim(event)" id="A3"></td>
+        <td ondragover="arrastando(event)" ondrop="fim(event)" id="B3"></td>
+        <td ondragover="arrastando(event)" ondrop="fim(event)" id="C3"></td>
+      </tr>
+      <tr>
+        <td ondragover="arrastando(event)" ondrop="fim(event)" id="A2"></td>
+        <td ondragover="arrastando(event)" ondrop="fim(event)" id="B2"></td>
+        <td ondragover="arrastando(event)" ondrop="fim(event)" id="C2"></td>
+      </tr>
+      <tr>
+        <td ondragover="arrastando(event)" ondrop="fim(event)" id="A1"></td>
+        <td ondragover="arrastando(event)" ondrop="fim(event)" id="B1"></td>
+        <td ondragover="arrastando(event)" ondrop="fim(event)" id="C1"></td>
+      </tr>
+    </table>
+    <div class="controle">
+      <img src="x.png" alt="imagem X" draggable="true" ondragstart="inicio(event)" id="imagemX">
+      <img src="o.png" alt="imagem 0" draggable="true" ondragstart="inicio(event)" id="imagemO">
+    </div>
+  
+    <script>
+        function inicio(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function arrastando(ev) {
+            ev.preventDefault();
+        }
+        
+        function fim(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");            
+if(ev.target.children.length == 0){
+ev.target.appendChild(document.getElementById(data).cloneNode(true)); 
+}else{
+alert("Casa já ocupada")
+}
+        }
+    </script>
+  </div>
+</div>
